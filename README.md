@@ -12,26 +12,36 @@ pull some files from a standart debian's distribution os pyexiv2.
 In that case, you can collect all neccessary links in one directory
 and add it as 'extra-path'. Here is a minimal buildout.cfg:
 
-   [buildout]
-   parts = pyexiv2 python
+    [buildout]
+    parts = pyexiv2 python
 
-   [pyexiv2]
-   recipe = svetlyak40wt.recipe.symlinks
-   path = parts/pyexiv2
-   files =
+    [pyexiv2]
+    recipe = svetlyak40wt.recipe.symlinks
+    path = parts/pyexiv2
+    files =
        /usr/share/pyshared/pyexiv2.py
        /usr/lib/python2.5/site-packages/libpyexiv2.so
 
-   [python]
-   recipe = zc.recipe.egg
-   interpreter = python
-   eggs = ipython
-   extra-paths = ${pyexiv2:path}
+    [python]
+    recipe = zc.recipe.egg
+    interpreter = python
+    eggs = ipython
+    extra-paths = ${pyexiv2:path}
+
+
+ChangeLog
+---------
+
+### 0.1.0
+
+Initial release. Seems that all work as supposed.
+
 
 Author
 ------
 
 Alexander Artemenko <svetlyak.40wt@gmail.com>
+
 
 Source
 ------
