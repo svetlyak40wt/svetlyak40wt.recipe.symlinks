@@ -40,13 +40,13 @@ Initial release. Seems that all work as supposed.
 Author
 ------
 
-Alexander Artemenko <svetlyak.40wt@gmail.com>
+Alexander Artemenko svetlyak.40wt at gmail.com
 
 
 Source
 ------
 
-http://github.com/svetlyak40wt/svetlyak40wt.recipe.symlinks/
+<http://github.com/svetlyak40wt/svetlyak40wt.recipe.symlinks/>
 
 Feel free to comment, clone and send patches.
 
