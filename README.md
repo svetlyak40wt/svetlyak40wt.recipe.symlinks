@@ -10,7 +10,7 @@ For example, you have isolated buildout environment, but want
 pull some files from a standart debian's distribution os pyexiv2.
 
 In that case, you can collect all neccessary links in one directory
-and add it as 'extra-path'. Here is a minimal buildout.cfg:
+and add it as `extra-path`. Here is a minimal buildout.cfg:
 
     [buildout]
     parts = pyexiv2 python
@@ -31,6 +31,10 @@ and add it as 'extra-path'. Here is a minimal buildout.cfg:
 
 ChangeLog
 ---------
+
+### 0.1.0
+
+Fixed bug when first directories of the `path` don't exist.
 
 ### 0.1.0
 

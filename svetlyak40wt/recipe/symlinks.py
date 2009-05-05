@@ -27,11 +27,6 @@ class Symlinks:
                               buildout['buildout']['directory'],
                               options['path'],
                               )
-        if not os.path.isdir(os.path.dirname(options['path'])):
-            logging.getLogger(self.name).error(
-                'Cannot create %s. %s is not a directory.',
-                options['path'], os.path.dirname(options['path']))
-            raise zc.buildout.UserError('Invalid Path')
 
 
     def install(self):
@@ -40,7 +35,7 @@ class Symlinks:
         logger.info(
             'Creating directory %s', os.path.basename(path))
         if not os.path.exists(path):
-            os.mkdir(path)
+            os.makedirs(path)
 
         files = (file for file in self.options['files'].split('\n') if file)
         for file in files:
