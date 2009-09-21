@@ -6,7 +6,7 @@ def read(filename):
         os.path.dirname(__file__), filename)).read()
 
 setup(
-    version = '0.1.1',
+    version = '0.1.2',
     name = 'svetlyak40wt.recipe.symlinks',
     description = 'Simple recipe to collect symbolic links in one directory.',
     long_description = read('README.md'),

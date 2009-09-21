@@ -39,7 +39,14 @@ class Symlinks:
 
         files = (file for file in self.options['files'].split('\n') if file)
         for file in files:
-            to = os.path.join(path, os.path.basename(file))
+            file = file.split(None, 1)
+            if len(file) == 2:
+                file, as_ = file
+            else:
+                file = file[0]
+                as_ = os.path.basename(file)
+
+            to = os.path.join(path, as_)
             if not os.path.exists(to):
                 logger.info('Making symlink from "%s" to "%s"' % (file, to))
                 os.symlink(file, to)
