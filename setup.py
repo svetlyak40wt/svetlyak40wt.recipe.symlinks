@@ -28,6 +28,5 @@ setup(
         'setuptools',
     ],
     zip_safe = False,
-    entry_points = {'zc.buildout': ['default = svetlyak40wt.recipe.symlinks:Symlinks'], 'zc.buildout.uninstall': ['symlink = symlinkrecipe:uninstall_symlink']},
+    entry_points = {'zc.buildout': ['default = svetlyak40wt.recipe.symlinks:Symlinks'], 'zc.buildout.uninstall': ['default = svetlyak40wt.recipe.symlinks:uninstall_symlinks']},
 )
-
