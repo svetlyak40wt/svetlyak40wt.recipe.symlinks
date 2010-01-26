@@ -6,7 +6,7 @@ def read(filename):
         os.path.dirname(__file__), filename)).read()
 
 setup(
-    version = '0.1.2',
+    version = '0.1.2.p',
     name = 'svetlyak40wt.recipe.symlinks',
     description = 'Simple recipe to collect symbolic links in one directory.',
     long_description = read('README.md'),
@@ -28,6 +28,6 @@ setup(
         'setuptools',
     ],
     zip_safe = False,
-    entry_points = {'zc.buildout': ['default = svetlyak40wt.recipe.symlinks:Symlinks']},
+    entry_points = {'zc.buildout': ['default = svetlyak40wt.recipe.symlinks:Symlinks'], 'zc.buildout.uninstall': ['symlink = symlinkrecipe:uninstall_symlink']},
 )
 

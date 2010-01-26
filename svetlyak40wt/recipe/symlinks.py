@@ -55,3 +55,5 @@ class Symlinks:
     def update(self):
         pass
 
+def uninstall_symlinks(name, options):
+    import pdb; pdb.set_trace()
