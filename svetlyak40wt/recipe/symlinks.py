@@ -57,8 +57,11 @@ class Symlinks:
         # currently support symlink removal, see uninstall_symlinks below.
         return []
 
+
     def update(self):
         pass
+
+
 
 def uninstall_symlinks(name, options):
     """

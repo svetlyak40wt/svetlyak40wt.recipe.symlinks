@@ -5,6 +5,14 @@ def read(filename):
     return open(os.path.join(
         os.path.dirname(__file__), filename)).read()
 
+entry_points = """
+[zc.buildout]
+    default = svetlyak40wt.recipe.symlinks:Symlinks
+
+[zc.buildout.uninstall]
+    default = svetlyak40wt.recipe.symlinks:uninstall_symlinks
+"""
+
 setup(
     version = '0.1.2.p',
     name = 'svetlyak40wt.recipe.symlinks',
@@ -28,5 +36,5 @@ setup(
         'setuptools',
     ],
     zip_safe = False,
-    entry_points = {'zc.buildout': ['default = svetlyak40wt.recipe.symlinks:Symlinks'], 'zc.buildout.uninstall': ['default = svetlyak40wt.recipe.symlinks:uninstall_symlinks']},
+    entry_points = entry_points,
 )
