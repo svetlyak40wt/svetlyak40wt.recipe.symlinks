@@ -50,10 +50,33 @@ class Symlinks:
             if not os.path.exists(to):
                 logger.info('Making symlink from "%s" to "%s"' % (file, to))
                 os.symlink(file, to)
-        return path
+        
+        # Since other processes may create resources in path it 
+        # should be excluded during uninstall, so return empty list.
+        # We can't return list of created symlinks as buildout does not
+        # currently support symlink removal, see uninstall_symlinks below.
+        return []
 
     def update(self):
         pass
 
 def uninstall_symlinks(name, options):
-    import pdb; pdb.set_trace()
+    """
+    Buildout does not currently support symlink removal.
+    This uninstall method removes created symlinks.
+
+    Inspired by https://bugs.launchpad.net/zc.buildout/+bug/144228
+    """
+    path = options['path']
+    files = (file for file in options['files'].split('\n') if file)
+    for file in files:
+        file = file.split(None, 1)
+        if len(file) == 2:
+            file, as_ = file
+        else:
+            file = file[0]
+            as_ = os.path.basename(file)
+
+        to = os.path.join(path, as_)
+        if os.path.isfile(to) or os.path.islink(to):
+            os.remove(to)
