@@ -24,6 +24,7 @@ Here is a minimal buildout.cfg:
     files =
        /usr/share/pyshared/pyexiv2.py
        /usr/lib/python2.5/site-packages/libpyexiv2.so
+       /tmp my-temp
 
     [django-media]
     recipe = svetlyak40wt.recipe.symlinks
@@ -40,6 +41,12 @@ Here is a minimal buildout.cfg:
 
 ChangeLog
 ---------
+
+### 0.1.3
+
+Prevent zc.buildout from removing all directory content on uninstall. Now script removes
+just those symlinks which was created during the previous call. Thanks to Shaun Sephton
+for the patch.
 
 ### 0.1.2
 
@@ -59,6 +66,11 @@ Author
 ------
 
 Alexander Artemenko svetlyak.40wt at gmail.com
+
+Credits
+-------
+
+* Shaun Sephton: patch to remove symlinks only.
 
 
 Source
