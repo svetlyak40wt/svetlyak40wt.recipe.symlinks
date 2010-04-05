@@ -33,6 +33,7 @@ setup(
     include_package_data = True,
     install_requires = [
         'zc.buildout',
+        'zc.recipe.egg',
         'setuptools',
     ],
     zip_safe = False,

@@ -32,6 +32,13 @@ Here is a minimal buildout.cfg:
     files =
         ${buildout:parts-directory}/django/django/contrib/admin/media admin
 
+    [django-egg-media]
+    # Another way to link into the egg
+    recipe = svetlyak40wt.recipe.symlinks
+    path = media
+    files =
+        django://contrib/admin/media admin
+
     [python]
     recipe = zc.recipe.egg
     interpreter = python
@@ -41,6 +48,11 @@ Here is a minimal buildout.cfg:
 
 ChangeLog
 ---------
+
+### 0.1.4
+
+Added ability to link resources inside egg, using following syntax: package://relative-path
+Now recipe removes old link when target changes.
 
 ### 0.1.3
 
