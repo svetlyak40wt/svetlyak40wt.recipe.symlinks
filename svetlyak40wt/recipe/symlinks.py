@@ -26,7 +26,7 @@ class Symlinks(Egg):
            # to the module resource.
            path = parts/etree
            files =
-               xml://etree ElementTree
+               xml://xml/etree ElementTree
 
            [python]
            recipe = zc.recipe.egg
@@ -100,7 +100,7 @@ class Symlinks(Egg):
 
         package = distributions[0]
 
-        result = os.path.join(package.location, package.key, path)
+        result = os.path.join(package.location, path)
         logger.info('resource filename for uri "%s" is "%s"' % (uri, result))
         return result
 

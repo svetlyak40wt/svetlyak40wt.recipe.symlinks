@@ -37,7 +37,14 @@ Here is a minimal buildout.cfg:
     recipe = svetlyak40wt.recipe.symlinks
     path = media
     files =
-        django://contrib/admin/media admin
+        django://django/contrib/admin/media admin
+
+    [django-cms-egg-media]
+    # An egg where the egg name differs from the first path segment
+    recipe = svetlyak40wt.recipe.symlinks
+    path = media
+    files =
+        django-cms://cms/media/cms
 
     [python]
     recipe = zc.recipe.egg
@@ -48,6 +55,11 @@ Here is a minimal buildout.cfg:
 
 ChangeLog
 ---------
+
+### dev
+
+Changed the way how paths into eggs are computed. Removed package.key from beeing
+the first path segment
 
 ### 0.1.4
 
