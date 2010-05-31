@@ -37,7 +37,7 @@ Here is a minimal buildout.cfg:
     recipe = svetlyak40wt.recipe.symlinks
     path = media
     files =
-        django://django/contrib/admin/media admin
+        Django://django/contrib/admin/media admin
 
     [django-cms-egg-media]
     # An egg where the egg name differs from the first path segment
@@ -56,10 +56,20 @@ Here is a minimal buildout.cfg:
 ChangeLog
 ---------
 
-### dev
+### 0.2.0
+
+#### Backward incompatibilities:
 
 Changed the way how paths into eggs are computed. Removed package.key from beeing
-the first path segment
+the first path segment. For example, if you used:
+
+    Django://contrib/admin/media admin
+
+It should be replaced with
+
+    Django://django/contrib/admin/media admin
+
+This allows to refer resources with diffrerent initial segments.
 
 ### 0.1.4
 
@@ -95,6 +105,7 @@ Credits
 -------
 
 * Shaun Sephton: patch to remove symlinks only.
+* Johannes Bornhold: patch to refer different resources within the package.
 
 
 Source

@@ -14,7 +14,7 @@ entry_points = """
 """
 
 setup(
-    version = '0.1.4',
+    version = '0.2.0',
     name = 'svetlyak40wt.recipe.symlinks',
     description = 'Simple recipe to collect symbolic links in one directory.',
     long_description = read('README.md'),
