@@ -14,7 +14,7 @@ entry_points = """
 """
 
 setup(
-    version = '0.2.0',
+    version = '0.2.1',
     name = 'svetlyak40wt.recipe.symlinks',
     description = 'Simple recipe to collect symbolic links in one directory.',
     long_description = read('README.md'),
@@ -26,7 +26,7 @@ setup(
     keywords = 'buildout recipe',
     author = 'Alexander Artemenko',
     author_email = 'svetlyak.40wt@gmail.com',
-    url = 'http://githib.com/svetlyak40wt/svetlyak40wt.recipe.symlinks',
+    url = 'http://github.com/svetlyak40wt/svetlyak40wt.recipe.symlinks',
     license = 'New BSD License',
     packages = find_packages(),
     namespace_packages = ['svetlyak40wt', 'svetlyak40wt.recipe'],
